@@ -2,19 +2,22 @@
 {
     public class Contact
     {
-        public Contact(int id, string name, string surname, string address, string email)
+        public Contact(int id, string name, string surname, string email, string phone)
         {
             Id = id;
             Name = name;
             Surname = surname;
-            Address = address;
             Email = email;
+            Phone = phone;
+
+
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Address { get; set; }
         public string Email { get; set; }
+        public string Phone { get; set; }
+
     }
 }
