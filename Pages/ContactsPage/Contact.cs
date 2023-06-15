@@ -1,4 +1,4 @@
-﻿namespace PYMB_Web.Models
+﻿namespace PYMB_Web.Pages.ContacsPage
 {
     public class Contact
     {
