@@ -2,6 +2,10 @@
 {
     public class Contact
     {
+        public Contact()
+        {
+        }
+
         public Contact(int id, string name, string surname, string email, string phone)
         {
             Id = id;

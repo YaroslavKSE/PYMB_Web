@@ -2,16 +2,39 @@
 @model PYMB_Web.Pages.ContacsPage.IndexModel
 @{
 }
+<div class="name">
+    <h2>Contacts</h2>
+     <a class="btn btn-success btn-lg btn-block" href="/ContactsPage/CreateContact"> Create new Contact </a>
+</div>
 
-<h2>Contacts</h2>
+<div class="table">
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">#</th>
       <th scope="col">ID</th>
       <th scope="col">NAME</th>
       <th scope="col">SURNAME</th>
       <th scope="col">EMAIL</th>
       <th scope="col">PHONE</th>
+      <th scope="col"></th>
+
     </tr>
   </thead>
+  <tbody>
+        @foreach(var contact in Model.contactsList)
+        {  
+       <tr>
+      <th scope="row">@contact.Id</th>
+      <td>@contact.Name</td>
+      <td>@contact.Surname</td>
+      <td>@contact.Email</td>
+      <td>@contact.Phone</td>
+      <td>
+          <a class="btn btn-outline-primary" href="/ContactsPage/Edit?id=@contact.Id"> Edit </a>
+              <a class="btn btn-outline-danger" href="/ContactsPage/Delete?id=@contact.Id"> Delete </a>
+          </td>
+        </tr>
+        }
+       </tdoby>
+    </table>
+</div>

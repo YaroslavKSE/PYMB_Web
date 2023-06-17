@@ -6,7 +6,7 @@ namespace PYMB_Web.Pages.ContacsPage
 {
     public class IndexModel : PageModel
     {
-        private List<Contact> contactsList = new List<Contact>();
+        public List<Contact> contactsList = new List<Contact>();
 
         public void OnGet()
         {
@@ -16,7 +16,7 @@ namespace PYMB_Web.Pages.ContacsPage
                 using SqlConnection connection = new(connectionName);
                 {
                     connection.Open();
-                    string sql = "SELECT * FORM CONTACTS";
+                    string sql = "SELECT * FROM CONTACTS";
                     using SqlCommand sqlCommand = new SqlCommand(sql, connection);
                     {
                         using SqlDataReader reader = sqlCommand.ExecuteReader();
