@@ -47,6 +47,7 @@ namespace PYMB_Web.Pages.ContactsPage
             }
 
             if(contact == null){
+                errorMessage = "Something went wrong, pleace try again";
                 return;
             }
             contact = new Contact();
