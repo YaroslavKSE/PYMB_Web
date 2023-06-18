@@ -13,19 +13,19 @@
 <form method="POST">
  <div class="row">
     <div class="col">
-      <input type="text" class="form-control" name="name" placeholder="First name">
+      <input type="text" class="form-control" name="name" placeholder="First name" required>
     </div>
     <div class="col">
-      <input type="text" class="form-control" name="surname" placeholder="Last name">
+      <input type="text" class="form-control" name="surname" placeholder="Last name" require>
     </div>
   </div>
   <div class="form-group">
     <label for="inputAddress">Email</label>
-    <input type="email" class="form-control" name="email" placeholder="Email address">
+    <input type="email" class="form-control" name="email" placeholder="Email address" require>
   </div>
   <div class="form-group">
     <label for="inputAddress2">Phone</label>
-    <input type="text" class="form-control" name="phone" placeholder="Phone number">
+    <input type="text" class="form-control" name="phone" placeholder="Phone number" required>
   </div>
     @if (Model.successMessage.Length > 0)
     {

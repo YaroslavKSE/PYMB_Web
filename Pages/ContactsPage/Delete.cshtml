@@ -3,13 +3,13 @@
 @{
     try
     {
-        var id = Request.Query["id"];
+        string id = Request.Query["id"];
 
         string connectionName = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Contacts;Integrated Security=True";
         using SqlConnection connection = new(connectionName);
         {
             connection.Open();
-            string sql = "DELETE FROM CONTACTS WHERE id=@id;";
+            string sql = "DELETE FROM CONTACTS WHERE id=@id";
             using SqlCommand sqlCommand = new SqlCommand(sql, connection);
             {
                 sqlCommand.Parameters.AddWithValue("@id", id);

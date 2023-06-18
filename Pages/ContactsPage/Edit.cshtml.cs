@@ -12,7 +12,7 @@ namespace PYMB_Web.Pages.ContactsPage
         public string errorMessage = "";
         public void OnGet()
         {
-            var id = Request.Query["id"];
+            string id = Request.Query["id"];
             try
             {
                 string connectionName = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Contacts;Integrated Security=True";
@@ -27,7 +27,7 @@ namespace PYMB_Web.Pages.ContactsPage
                         {
                             while (reader.Read())
                             {
-                                contact.Id = Convert.ToInt32(reader["id"]);
+                                contact.Id = reader.GetInt32(0);
                                 contact.Name = reader.GetString(1);
                                 contact.Surname = reader.GetString(2);
                                 contact.Email = reader.GetString(3);
@@ -47,7 +47,7 @@ namespace PYMB_Web.Pages.ContactsPage
         }
         public void OnPost()
         {
-            contact.Name = Request.Form["id"];
+            contact.Id = Convert.ToInt32(Request.Form["id"]);
             contact.Name = Request.Form["name"];
             contact.Surname = Request.Form["surname"];
             contact.Email = Request.Form["email"];
@@ -85,10 +85,9 @@ namespace PYMB_Web.Pages.ContactsPage
                 return;
             }
 
-            contact = new Contact();
-            successMessage = "Contact updated!";
+            //contact = new Contact();
+            //successMessage = "Contact updated!";
             Response.Redirect("/ContactsPage/Index");
         }
     }
 }
-
